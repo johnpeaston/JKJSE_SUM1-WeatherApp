@@ -2,6 +2,89 @@
 
 <body>
   <div class="container">
+    <form action="/select-city" method="GET">
+      <label for="city-dropdown">Choose a city:</label>
+      <select id="city-dropdown" name="city" onchange="updateCoordinates()">
+        <option value="Bristol" data-lat="51.4552" data-lng="-2.5967">
+          Bristol
+        </option>
+        <option value="Liverpool" data-lat="53.4106" data-lng="-2.9779">
+          Liverpool
+        </option>
+        <option value="Birmingham" data-lat="52.4814" data-lng="-1.8998">
+          Birmingham
+        </option>
+        <option value="Manchester" data-lat="53.4810" data-lng="-2.2374">
+          Manchester
+        </option>
+        <option value="Leeds" data-lat="53.7964" data-lng="-1.5476">
+          Leeds
+        </option>
+        <option value="London" data-lat="51.5085" data-lng="-0.1257">
+          London
+        </option>
+        <option value="Sheffield" data-lat="53.3830" data-lng="-1.4659">
+          Sheffield
+        </option>
+        <option value="Bradford" data-lat="53.7939" data-lng="-1.7521">
+          Bradford
+        </option>
+        <option value="Cardiff" data-lat="51.4800" data-lng="-3.1800">
+          Cardiff
+        </option>
+        <option value="Edinburgh" data-lat="55.9521" data-lng="-3.1965">
+          Edinburgh
+        </option>
+        <option value="Leicester" data-lat="52.6386" data-lng="-1.1317">
+          Leicester
+        </option>
+        <option value="Glasgow" data-lat="55.8652" data-lng="-4.2576">
+          Glasgow
+        </option>
+        <option value="Newcastle" data-lat="54.9733" data-lng="-1.6140">
+          Newcastle
+        </option>
+        <option value="Nottingham" data-lat="52.9536" data-lng="-1.1505">
+          Nottingham
+        </option>
+        <option value="Hull" data-lat="53.7383" data-lng="-0.3333">Hull</option>
+        <option value="Coventry" data-lat="52.4066" data-lng="-1.5122">
+          Coventry
+        </option>
+        <option value="Derby" data-lat="52.9198" data-lng="-1.4727">
+          Derby
+        </option>
+        <option value="Southampton" data-lat="50.9040" data-lng="-1.4043">
+          Southampton
+        </option>
+        <option value="Brighton and Hove" data-lat="50.8233" data-lng="-0.1517">
+          Brighton and Hove
+        </option>
+        <option value="Plymouth" data-lat="50.3715" data-lng="-4.1431">
+          Plymouth
+        </option>
+        <option value="Stoke-on-Trent" data-lat="53.0042" data-lng="-2.1854">
+          Stoke-on-Trent
+        </option>
+        <option value="Norwich" data-lat="52.6278" data-lng="1.2983">
+          Norwich
+        </option>
+        <option value="Beflast" data-lat="54.5915" data-lng="-5.9242">
+          Belfast
+        </option>
+        <option value="Bournemouth" data-lat="50.7370" data-lng="-1.8457">
+          Bournemouth
+        </option>
+      </select>
+
+      <input type="hidden" id="latitude" name="latitude" />
+      <input type="hidden" id="longitude" name="longitude" />
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="container">
     <form id="myForm" method="get">
       <label for="latitude">Latitude:</label>
       <input type="number" id="latitude" name="latitude" />
@@ -18,6 +101,20 @@
     <p>No area currently entered</p>
     <% } %>
   </div>
+
+  <script>
+    function updateCoordinates() {
+      const dropdown = document.getElementById("city-dropdown");
+      const selectedOption = dropdown.options[dropdown.selectedIndex];
+      const latitude = selectedOption.getAttribute("data-lat");
+      const longitude = selectedOption.getAttribute("data-lng");
+
+      document.getElementById("latitude").value = latitude;
+      document.getElementById("longitude").value = longitude;
+    }
+
+    window.addEventListener("DOMContentLoaded", updateCoordinates);
+  </script>
 </body>
 
 <%- include("partials/footer.ejs") %>

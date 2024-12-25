@@ -35,8 +35,6 @@ app.get("/local-weather", async (req, res) => {
 
 app.get("/select-city", async (req, res) => {
   const { latitude, longitude } = req.query;
-  console.log("Latitude:", latitude);
-  console.log("Longitude:", longitude);
   try {
     const result = await axios.get(API_URL, {
       params: {

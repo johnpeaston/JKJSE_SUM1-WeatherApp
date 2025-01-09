@@ -7,15 +7,28 @@ body {
   overflow: hidden;
 }
 
+.main-body {
+  position: relative;
+  padding-top: 73px;
+}
+
+.header {
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  border-bottom: 1px solid lightgray;
+}
+
 .webpage-text {
-  font-size: large;
+  font-size: larger;
 }
 
 .or-line {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 50px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .input-container {
@@ -23,8 +36,14 @@ body {
   padding: 50px 0;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 5%;
+  width: 90%;
+  border-top: 1px solid lightgray;
 }

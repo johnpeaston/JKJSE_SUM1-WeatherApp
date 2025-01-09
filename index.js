@@ -43,9 +43,11 @@ app.get("/select-city", async (req, res) => {
         appid: apiKey,
       },
     });
-    console.log(result);
     res.render("index.ejs", {
-      weather: JSON.stringify(result.data),
+      lat: JSON.stringify(result.data.lat),
+      lon: JSON.stringify(result.data.lon),
+      date: JSON.stringify(result.data.date),
+      overview: JSON.stringify(result.data.weather_overview),
     });
   } catch (error) {
     res.render("index.ejs", { weather: JSON.stringify(error.response) });

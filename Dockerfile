@@ -11,10 +11,10 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the application files
-COPY . .
+# COPY . .
 
 # Expose the port your app listens on
-EXPOSE 3000
+# EXPOSE 3000
 
 # Start the application
-CMD ["npm", "start"]
+# CMD ["npm", "start"]

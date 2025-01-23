@@ -53,6 +53,6 @@ echo "Build new container image..."
 ibmcloud ce buildrun submit -n jkj-weather-drun --build jkj-weather-dbuild --wait
 
 # Create an application from the image we just built
-#echo "Create new application from container image..."
+echo "Create new application from container image..."
 #ibmcloud ce job create -n jkj-hpc-cosfs1 --image "$ICR/${ICR_NS}/app" --rs jkj-codengine-dicr
-#ibmcloud ce app create -n jkj-weather-app --image "$ICR/${ICR_NS}/weather-app" --rs jkj-codengine-dicr
+ibmcloud ce app create -n jkj-weather-app --image "$ICR/${ICR_NS}/weather-app" --rs jkj-codengine-dicr

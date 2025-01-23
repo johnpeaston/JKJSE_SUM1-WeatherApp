@@ -10,8 +10,5 @@ RUN npm init -f && npm install
 COPY index.js .
 # Expose the port
 EXPOSE 8080
-
 # Start the application
-# CMD ["npm", "start"]
-
-# CMD [ "node", "server.js" ]
+# CMD [ "node", "index.js" ]

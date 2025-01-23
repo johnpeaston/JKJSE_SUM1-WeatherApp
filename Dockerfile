@@ -15,6 +15,6 @@ RUN chmod +x /home/node/app/index.js
 # Expose the port
 EXPOSE 8080
 # Start the application
-CMD [ "index.js" ]
+CMD [ "node", "index.js" ]
 
 #ENTRYPOINT ["/root/app.sh"]

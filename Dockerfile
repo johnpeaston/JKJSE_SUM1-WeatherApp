@@ -1,20 +1,17 @@
 # Use a Node.js base image
 FROM node:16-alpine
-
+# Apply any updates to the base image
+RUN apk -U upgrade
 # Set the working directory in the container
-WORKDIR /
-
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
+WORKDIR /app
 # Install dependencies
-RUN npm install
-
-# Copy the rest of the application files
-# COPY . .
-
-# Expose the port your app listens on
-# EXPOSE 3000
+RUN npm init -f && npm install
+# Copy code into the image
+COPY index.js .
+# Expose the port
+EXPOSE 8080
 
 # Start the application
 # CMD ["npm", "start"]
+
+# CMD [ "node", "server.js" ]

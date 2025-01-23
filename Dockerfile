@@ -4,7 +4,7 @@ FROM node:16-alpine
 RUN apk -U upgrade
 # Set the working directory in the container
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
-WORKDIR /app
+WORKDIR /home/node/app
 # Install dependencies
 COPY package*.json .
 RUN npm init -f && npm install

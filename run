@@ -11,7 +11,7 @@ function clean() {
   echo "Cleaning up from previous builds..."
   (
   # ibmcloud cr namespace-rm "${ICR_NS}" -f
-  ibmcloud ce job delete -n jkj-hpc-cosfs1 -f
+  ibmcloud ce app delete -n jkj-weather-app -f
   # ibmcloud ce registry delete -n s2i-dicr -f
   ibmcloud ce buildrun delete -n jkj-weather-drun -f
   ibmcloud ce build delete -n jkj-weather-dbuild -f

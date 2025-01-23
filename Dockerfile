@@ -10,7 +10,12 @@ COPY package*.json .
 RUN npm init -f && npm install
 # Copy code into the image
 COPY --chown=node:node index.js .
+# Make inxes.js executable
+RUN chmod +x /home/node/app/index.js
 # Expose the port
 EXPOSE 8080
 # Start the application
 CMD [ "node", "index.js" ]
+
+#RUN chmod +x /root/app.sh
+#ENTRYPOINT ["/root/app.sh"]
